@@ -39,147 +39,149 @@ var config int ConfigOnMiniMissionGenericEvent;
 var config int ConfigOnMiniMissionTimeLimitSecond;
 
 function OnPostInitGame() {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPostInitGame == 1) Print("[GEI] => OnPostInitGame");
+    if(ConfigOnPostInitGame == 1) Print("OnPostInitGame");
 }
 
 function OnPostLevelIntro() {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPostLevelIntro == 1) Print("[GEI] => OnPostLevelIntro");
+    if(ConfigOnPostLevelIntro == 1) Print("OnPostLevelIntro");
 }
 
 function OnGetDefaultPlayerClass(Controller C, out class<Pawn> PawnClass) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnGetDefaultPlayerClass == 1) Print("[GEI] => OnGetDefaultPlayerClass: {Controller" @ C $ "," @ "PawnClass" @ PawnClass $ "}");
+    if(ConfigOnGetDefaultPlayerClass == 1) Print("OnGetDefaultPlayerClass:" @ `ShowVar(C) @ `ShowVar(PawnClass));
 }
 
 function OnTimePieceCollected(string Identifier) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnTimePieceCollected == 1) Print("[GEI] => OnTimePieceCollected: {Identifier" @ Identifier $ "}");
+    if(ConfigOnTimePieceCollected == 1) Print("OnTimePieceCollected:" @ `ShowVar(Identifier));
 }
 
 function OnCollectibleSpawned(Object InCollectible) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnCollectibleSpawned == 1) Print("[GEI] => OnCollectibleSpawned: {InCollectible" @ InCollectible $ "}");
+    if(ConfigOnCollectibleSpawned == 1) Print("OnCollectibleSpawned:" @ `ShowVar(InCollectible));
 }
 
 function OnCollectedCollectible(Object InCollectible) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnCollectedCollectible == 1) Print("[GEI] => OnCollectedCollectible: {InCollectible" @ InCollectible $ "}");
+    if(ConfigOnCollectedCollectible == 1) Print("OnCollectedCollectible:" @ `ShowVar(InCollectible));
 }
 
 function OnPreOpenHUD(HUD InHUD, out class<Object> InHUDElement) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreOpenHUD == 1) Print("[GEI] => OnPreOpenHUD: {InHUD" @ InHUD $ "," @ "InHUDElement" @ InHUDElement $ "}");
+    if(ConfigOnPreOpenHUD == 1) Print("OnPreOpenHUD:" @ `ShowVar(InHUD) @ `ShowVar(InHUDElement));
 }
 
 function OnPreActSelectMapChange(Object ChapterInfo, out int ActID, out String MapName) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreActSelectMapChange == 1) Print("[GEI] => OnPreActSelectMapChange: {ChapterInfo" @ ChapterInfo $ "," @ "ActID" @ ActID $ "," @ "MapName" @ MapName $ "}");
+    if(ConfigOnPreActSelectMapChange == 1) Print("OnPreActSelectMapChange:" @ `ShowVar(ChapterInfo) @ `ShowVar(ActID) @ `ShowVar(MapName));
 }
 
 function OnPreRestartMap(out String MapName) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreRestartMap == 1) Print("[GEI] => OnPreRestartMap: {MapName" @ MapName $ "}");
+    if(ConfigOnPreRestartMap == 1) Print("OnPreRestartMap:" @ `ShowVar(MapName));
 }
 
 function OnPreStatusEffectAdded(Pawn PawnCombat, out class<Object> StatusEffect, out float OverrideDuration) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreStatusEffectAdded == 1) Print("[GEI] => OnPreStatusEffectAdded: {PawnCombat" @ PawnCombat $ "," @ "StatusEffect" @ StatusEffect $ "," @ "OverrideDuration" @ OverrideDuration $ "}");
+    if(ConfigOnPreStatusEffectAdded == 1) Print("OnPreStatusEffectAdded:" @ `ShowVar(PawnCombat) @ `ShowVar(StatusEffect) @ `ShowVar(OverrideDuration));
 }
 
 function OnStatusEffectRemoved(Pawn PawnCombat, class<Object> StatusEffect) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnStatusEffectRemoved == 1) Print("[GEI] => OnStatusEffectRemoved: {PawnCombat" @ PawnCombat $ "," @ "StatusEffect" @ StatusEFfect $ "}");
+    if(ConfigOnStatusEffectRemoved == 1) Print("OnStatusEffectRemoved:" @ `ShowVar(PawnCombat) @ `ShowVar(StatusEffect));
 }
 
 function OnLoadoutChanged(PlayerController Controller, Object Loadout, Object BackpackItem) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnLoadoutChanged == 1) Print("[GEI] => OnLoadoutChanged: {Controller" @ Controller $ "," @ "Loadout" @ Loadout $ "," @ "BackpackItem" @ BackpackItem $ "}");
+    if(ConfigOnLoadoutChanged == 1) Print("OnLoadoutChanged:" @ `ShowVar(Controller) @ `ShowVar(Loadout) @ `ShowVar(BackpackItem));
 }
 
 function OnAbilityUsed(Pawn Player, Inventory Ability) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnAbilityUsed == 1) Print("[GEI] => OnAbilityUsed: {Player" @ Player $ "," @ "Ability" @ Ability $ "}");
+    if(ConfigOnAbilityUsed == 1) Print("OnAbilityUsed:" @ `ShowVar(Player) @ `ShowVar(Ability));
 }
 
 function OnWeaponBadgeUsed(Pawn Player, class<Inventory> Badge) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnWeaponBadgeUsed == 1) Print("[GEI] => OnWeaponBadgeUsed: {Player" @ Player $ "," @ "Badge" @ Badge $ "}");
+    if(ConfigOnWeaponBadgeUsed == 1) Print("OnWeaponBadgeUsed:" @ `ShowVar(Player) @ `ShowVar(Badge));
 }
 
 function OnCheckpointSet(int CheckPoint) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnCheckpointSet == 1) Print("[GEI] => OnCheckpointSet: {Checkpoint" @ Checkpoint $ "}");
+    if(ConfigOnCheckpointSet == 1) Print("OnCheckpointSet:" @ `ShowVar(Checkpoint));
 }
 
 function OnPreCheckpointSet(int Checkpoint) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreCheckpointSet == 1) Print("[GEI] => OnPreCheckpointSet: {Checkpoint" @ Checkpoint $ "}");
+    if(ConfigOnPreCheckpointSet == 1) Print("OnPreCheckpointSet:" @ `ShowVar(Checkpoint));
 }
 
 function OnPlayerDeath(Pawn Player) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPlayerDeath == 1) Print("[GEI] => OnPlayerDeath: {Player" @ Player $ "}");
+    if(ConfigOnPlayerDeath == 1) Print("OnPlayerDeath:" @ `ShowVar(Player));
 }
 
 function OnAllPlayersDead() {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnAllPlayersDead == 1) Print("[GEI] => OnAllPlayersDead");
+    if(ConfigOnAllPlayersDead == 1) Print("OnAllPlayersDead");
 }
 
 //Skips HitInfo, it's already so long and the compiler won't print structs on their own
 function OnPrePawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPrePawnCombatTakeDamage == 1) Print("[GEI] => OnPrePawnCombatTakeDamage: \n{PawnCombat" @ PawnCombat $ "," @ "Damage" @ Damage $ "," @ "InstigatedBy" @ InstigatedBy $ "," @ "HitLocation" @ HitLocation $ "," @
-    "Momentum" @ Momentum $ "," @ "DamageType" @ DamageType $ "," @ "DamageCauser" @ DamageCauser $ "}");
+    if(ConfigOnPrePawnCombatTakeDamage == 1) Print("OnPrePawnCombatTakeDamage:\n" $ `ShowVar(PawnCombat) @ `ShowVar(Damage) 
+	@ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
 }
 
 function OnPostPawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPostPawnCombatTakeDamage == 1) Print("[GEI] => OnpostPawnCombatTakeDamage: \n{PawnCombat" @ PawnCombat $ "," @ "Damage" @ Damage $ "," @ "InstigatedBy" @ InstigatedBy $ "," @ "HitLocation" @ HitLocation $ "," @
-    "Momentum" @ Momentum $ "," @ "DamageType" @ DamageType $ "," @ "DamageCauser" @ DamageCauser $ "}");
+    if(ConfigOnPostPawnCombatTakeDamage == 1) Print("OnPostPawnCombatTakeDamage:\n" $ `ShowVar(PawnCombat) @ `ShowVar(Damage) 
+	@ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
 }
 
 function OnPawnCombatDeath(Pawn PawnCombat, Controller Killer, class<Object> DamageType, Vector HitLocation) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPawnCombatDeath == 1) Print("[GEI] => OnPawnCombatDeath: {PawnCombat" @ PawnCombat $ "," @ "Killer" @ Killer $ "," @ "DamageType" @ DamageType $ "," @ "HitLocation" @ HitLocation $ "}");
+    if(ConfigOnPawnCombatDeath == 1) Print("OnPawnCombatDeath:" @ `ShowVar(PawnCombat) @ `ShowVar(Killer) @ `ShowVar(DamageType) @ `ShowVar(HitLocation));
 }
 
 function OnPreBreakableBreak(Actor Breakable, Pawn Instigator) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPreBreakableBreak == 1) Print("[GEI] => OnPreBreakableBreak: {Breakable" @ Breakable $ "," @ "Instigator" @ Instigator $ "}");
+    if(ConfigOnPreBreakableBreak == 1) Print("OnPreBreakableBreak:" @ `ShowVar(Breakable) @ `ShowVar(Instigator));
 }
 
 function OnPlayerShoved(Pawn Player, Pawn Instigator, Vector Angle) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPlayerShoved == 1) Print("[GEI] => OnPlayerShoved: {Player" @ Player $ "," @ "Instigator" @ Instigator $ "," @ "Angle" @ Angle $ "}");
+    if(ConfigOnPlayerShoved == 1) Print("OnPlayerShoved:" @ `ShowVar(Player) @ `ShowVar(Instigator) @ `ShowVar(Angle));
 }
 
 function OnPlayerPressedJumpButton(Pawn Player) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPlayerPressedJumpButton == 1) Print("[GEI] => OnPlayerPressedJumpButton: {Player" @ Player $ "}");
+    if(ConfigOnPlayerPressedJumpButton == 1) Print("OnPlayerPressedJumpButton:" @ `ShowVar(Player));
 }
 
 function OnBossPhaseMissed(Pawn Player, Pawn Boss) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnBossPhaseMissed == 1) Print("[GEI] => OnBossPhaseMissed: {Player" @ Player $ "," @ "Boss" @ Boss $ "}");
+    if(ConfigOnBossPhaseMissed == 1) Print("OnBossPhaseMissed:" @ `ShowVar(Player) @ `ShowVar(Boss));
 }
 
 function OnGuardAlerted(Pawn Player, Pawn Guard) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnGuardAlerted == 1) Print("[GEI] => OnGuardAlerted: {Player" @ Player $ "," @ "Guard" @ Guard $ "}");
+    if(ConfigOnGuardAlerted == 1) Print("OnGuardAlerted:" @ `ShowVar(Player) @ `ShowVar(Guard));
 }
 
 function OnGuardCaught(Pawn Player, Pawn Guard) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnGuardCaught == 1) Print("[GEI] => OnGuardCaught: {Player" @ Player $ "," @ "Guard" @ Guard $ "}");
+    if(ConfigOnGuardCaught == 1) Print("OnGuardCaught:" @ `ShowVar(Player) @ `ShowVar(Guard));
 }
 
 function OnPlayerEnterCannon(Pawn Player, Actor Cannon) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnPlayerEnterCannon == 1) Print("[GEI] => OnPlayerEnterCannon: {Player" @ Player $ "," @ "Cannon" @ Cannon $ "}");
+    if(ConfigOnPlayerEnterCannon == 1) Print("OnPlayerEnterCannon:" @ `ShowVar(Player) @ `ShowVar(Cannon));
 }
 
 function OnMiniMissionBegin(Object MiniMission) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionBegin == 1) Print("[GEI] => OnMiniMissionBegin: {MiniMission" @ MiniMission $ "}");
+    if(ConfigOnMiniMissionBegin == 1) Print("OnMiniMissionBegin:" @ `ShowVar(MiniMission));
 }
 
 function OnMiniMissionComplete(Object MiniMission) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionComplete == 1) Print("[GEI] => OnMiniMissionComplete: {MiniMission" @ MiniMission $ "}");
+    if(ConfigOnMiniMissionComplete == 1) Print("OnMiniMissionComplete:" @ `ShowVar(MiniMission));
 }
 
 function OnMiniMissionFail(Object MiniMission) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionFail == 1) Print("[GEI] => OnMiniMissionFail: {MiniMission" @ MiniMission $ "}");
+    if(ConfigOnMiniMissionFail == 1) Print("OnMiniMissionFail:" @ `ShowVar(MiniMission));
 }
 
 function OnMiniMissionCancel(Object MiniMission) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionCancel == 1) Print("[GEI] => OnMiniMissionCancel: {MiniMission" @ MiniMission $ "}");
+    if(ConfigOnMiniMissionCancel == 1) Print("OnMiniMissionCancel:" @ `ShowVar(MiniMission));
 }
 
 function OnMiniMissionGenericEvent(Object MiniMission, String id) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionGenericEvent == 1) Print("[GEI] => OnMiniMissionGenericEvent: {MiniMission" @ MiniMission $ "," @ "id" @ id $ "}");
+    if(ConfigOnMiniMissionGenericEvent == 1) Print("OnMiniMissionGenericEvent:" @ `ShowVar(MiniMission) @ `ShowVar(id));
 }
 
 function OnMiniMissionTimeLimitSecond(Object MiniMission, float TimeLeft) {
-    if(class'Yoshi_GameMod_GEIViewer'.default.ConfigOnMiniMissionTimeLimitSecond == 1) Print("[GEI] => OnMiniMissionTimeLimitSecond: {MiniMission" @ MiniMission $ "," @ "TimeLeft" @ TimeLeft $ "}");
+    if(ConfigOnMiniMissionTimeLimitSecond == 1) Print("OnMiniMissionTimeLimitSecond:" @ `ShowVar(MiniMission) @ `ShowVar(TimeLeft));
 }
 
 static final function Print(coerce string msg)
 {
     local WorldInfo wi;
+
+	msg = "[GEI] => " $ msg;
     wi = class'WorldInfo'.static.GetWorldInfo();
     if (wi != None)
     {
