@@ -112,13 +112,11 @@ function OnAllPlayersDead() {
 
 //Skips HitInfo, it's already so long and the compiler won't print structs on their own
 function OnPrePawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(ConfigOnPrePawnCombatTakeDamage == 1) Print("OnPrePawnCombatTakeDamage:\n" $ `ShowVar(PawnCombat) @ `ShowVar(Damage) 
-	@ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
+    if(ConfigOnPrePawnCombatTakeDamage == 1) Print("OnPrePawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
 }
 
 function OnPostPawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(ConfigOnPostPawnCombatTakeDamage == 1) Print("OnPostPawnCombatTakeDamage:\n" $ `ShowVar(PawnCombat) @ `ShowVar(Damage) 
-	@ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
+    if(ConfigOnPostPawnCombatTakeDamage == 1) Print("OnPostPawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
 }
 
 function OnPawnCombatDeath(Pawn PawnCombat, Controller Killer, class<Object> DamageType, Vector HitLocation) {
