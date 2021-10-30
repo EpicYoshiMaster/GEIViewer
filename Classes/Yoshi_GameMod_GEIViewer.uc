@@ -112,23 +112,23 @@ function OnAllPlayersDead() {
 
 //Skips HitInfo, it's already so long and the compiler won't print structs on their own
 function OnPrePawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(ConfigOnPrePawnCombatTakeDamage == 1) Print("OnPrePawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
+    if(ConfigOnPrePawnCombatTakeDamage == 1) Print("OnPrePawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(DamageCauser));
 }
 
 function OnPostPawnCombatTakeDamage(Pawn PawnCombat, int Damage, Controller InstigatedBy, Vector HitLocation, Vector Momentum, class<Object> DamageType, TraceHitInfo HitInfo, Actor DamageCauser) {
-    if(ConfigOnPostPawnCombatTakeDamage == 1) Print("OnPostPawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(HitInfo) @ `ShowVar(DamageCauser));
+    if(ConfigOnPostPawnCombatTakeDamage == 1) Print("OnPostPawnCombatTakeDamage:\n" @ `ShowVar(PawnCombat) @ `ShowVar(Damage) @ `ShowVar(InstigatedBy) @ `ShowVar(HitLocation) @ `ShowVar(Momentum) @ `ShowVar(DamageType) @ `ShowVar(DamageCauser));
 }
 
 function OnPawnCombatDeath(Pawn PawnCombat, Controller Killer, class<Object> DamageType, Vector HitLocation) {
     if(ConfigOnPawnCombatDeath == 1) Print("OnPawnCombatDeath:" @ `ShowVar(PawnCombat) @ `ShowVar(Killer) @ `ShowVar(DamageType) @ `ShowVar(HitLocation));
 }
 
-function OnPreBreakableBreak(Actor Breakable, Pawn Instigator) {
-    if(ConfigOnPreBreakableBreak == 1) Print("OnPreBreakableBreak:" @ `ShowVar(Breakable) @ `ShowVar(Instigator));
+function OnPreBreakableBreak(Actor Breakable, Pawn BreakInstigator) {
+    if(ConfigOnPreBreakableBreak == 1) Print("OnPreBreakableBreak:" @ `ShowVar(Breakable) @ `ShowVar(BreakInstigator));
 }
 
-function OnPlayerShoved(Pawn Player, Pawn Instigator, Vector Angle) {
-    if(ConfigOnPlayerShoved == 1) Print("OnPlayerShoved:" @ `ShowVar(Player) @ `ShowVar(Instigator) @ `ShowVar(Angle));
+function OnPlayerShoved(Pawn Player, Pawn BreakInstigator, Vector Angle) {
+    if(ConfigOnPlayerShoved == 1) Print("OnPlayerShoved:" @ `ShowVar(Player) @ `ShowVar(BreakInstigator) @ `ShowVar(Angle));
 }
 
 function OnPlayerPressedJumpButton(Pawn Player) {
